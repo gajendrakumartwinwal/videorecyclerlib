@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">scrollawarelib</string>
+    <string name="recycler_viewholder_key">recycler_viewholder_key</string>
+</resources>

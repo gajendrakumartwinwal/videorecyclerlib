@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+    <ImageView android:id="@+id/iv_gear" android:padding="16dp" android:layout_width="80dp"
+               android:layout_height="match_parent"
+               android:src="@drawable/gear_icon"/>
+    <TextView android:layout_width="match_parent" android:id="@+id/list_item_headline"
+              android:layout_height="match_parent"
+              android:gravity="center" android:text="Working" android:background="#e2e2e2"/>
+
+</LinearLayout>
