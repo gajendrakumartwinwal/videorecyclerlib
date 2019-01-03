@@ -6,7 +6,7 @@ import android.util.AttributeSet
 import com.scrollaware.lib.interfaces.PercentageCalculator
 
 /**
- * This class gives scroll callback to the viewholder class if viewholder extends {@link NestedScrollListener}
+ * This class gives scroll callback to the viewholder class if viewholder instance of {@link NestedScrollListener}
  */
 class ScrollAwareRecyclerView : RecyclerView {
     private lateinit var percentageCalculator: PercentageCalculator
@@ -25,7 +25,7 @@ class ScrollAwareRecyclerView : RecyclerView {
 
     var scrollListener: RecyclerView.OnScrollListener = object : RecyclerView.OnScrollListener() {
         override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-//            percentageCalculator.notifyOnScrollStateChanged(recyclerView, newState)
+            percentageCalculator.notifyOnScrollStateChanged(recyclerView, newState)
         }
 
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {

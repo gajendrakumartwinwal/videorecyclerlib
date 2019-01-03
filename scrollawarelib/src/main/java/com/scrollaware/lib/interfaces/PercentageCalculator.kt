@@ -3,6 +3,7 @@ package com.scrollaware.lib.interfaces
 import android.graphics.Rect
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import com.scrollaware.lib.R
 import kotlin.math.absoluteValue
 
@@ -33,6 +34,9 @@ class PercentageCalculator {
      * This rect is used to get viewholder coordinates
      */
     private var viewHolderRect: Rect = Rect()
+
+
+    private var scrollState: Int = -1
 
     /**
      * Notify scroll value in x and y direction to the viewholder using  NestedScrollListener.onScrolled
@@ -93,12 +97,8 @@ class PercentageCalculator {
      * Delayed notify handled here if DELAY_VALUE is greater than 0 else notify imidiately
      */
     private fun notifyDeactiveView(viewHolder: RecyclerView.ViewHolder?, position: Int) {
-        /*if (DELAY_VALUE > 0) {
-            viewHolder!!.itemView.setTag(R.string.recycler_viewholder_key, position)
-        } else {*/
-        if (DELAY_VALUE > 0) viewHolder!!.itemView.setTag(R.string.recycler_viewholder_key, "D-" + position)
+        if (DELAY_VALUE > 0) viewHolder?.itemView?.setTag(R.string.recycler_viewholder_key, "D-" + position)
         (viewHolder as NestedScrollListener).onDeative()
-//        }
     }
 
 
@@ -127,5 +127,14 @@ class PercentageCalculator {
         viewHolderRect.top = viewholder.itemView.top
         viewHolderRect.bottom = viewholder.itemView.bottom
         return (mRecyclerRect!!.centerY() - viewHolderRect.centerY()).absoluteValue
+    }
+
+    /**
+     * This method will be called whenever scroll state changed
+     * and it is used to detect scroll state and if user is in drag state call active imidiatly else wait for {@link DELAY_VALUE}
+     */
+    fun notifyOnScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+        scrollState = newState
+        Log.d("SCROLL_STATES", "STATE - " + newState);
     }
 }

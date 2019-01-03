@@ -3,6 +3,10 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="250dp">
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/video_thumb"/>
 
     <ProgressBar
             android:id="@+id/progress_bar"
@@ -10,13 +14,16 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"/>
 
+    <ImageView
+            android:id="@+id/play_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/play_button"
+            android:layout_gravity="center"/>
+
     <FrameLayout
             android:id="@+id/ll_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-    <WebView
-            android:id="@+id/webview_compontent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
 </FrameLayout>

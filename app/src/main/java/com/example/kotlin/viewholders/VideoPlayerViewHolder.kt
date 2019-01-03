@@ -29,9 +29,10 @@ class VideoPlayerViewHolder(itemView: View) : BaseViewHolder<ItemList>(itemView)
                 // loadVideo() will auto play video
                 // Use cueVideo() method, if you don't want to play it automatically
                 player.loadVideo(videoItemList?.getYoutbeId())
+                setViewsVisibility(1, View.VISIBLE)
 //                 Hiding player controls
 //                player.setPlayerStyle(YouTubePlayer.PlayerStyle.CHROMELESS)
-            };
+            }
         }
     }
 
@@ -43,13 +44,13 @@ class VideoPlayerViewHolder(itemView: View) : BaseViewHolder<ItemList>(itemView)
     var videoItemList: VideoItemList? = null
 
     override fun onActive() {
-        Log.d("DDDDD", "Active For position - "+ (videoItemList?.id ?: ""))
-//        videoItemList?.active(itemView.context, llVideoContaienr)
+        Log.d("DDDDD", "Active For position - " + (videoItemList?.id ?: ""))
         llVideoContaienr.setBackgroundColor(
             ContextCompat.getColor(
                 itemView.context, R.color.primary_dark_material_light
             )
         )
+        setViewsVisibility(2, View.VISIBLE)
         playYoutubePlayerView(videoItemList!!.youtubeId!!)
     }
 
@@ -59,19 +60,21 @@ class VideoPlayerViewHolder(itemView: View) : BaseViewHolder<ItemList>(itemView)
         llVideoContaienr.setBackgroundColor(ContextCompat.getColor(itemView.context, android.R.color.transparent))
         youTubePlayer?.release()
         llVideoContaienr.removeAllViews()
+        setViewsVisibility(0, View.VISIBLE)
     }
 
     internal var mProgressBar: ProgressBar
     internal var llVideoContaienr: FrameLayout
-    internal var mErrorView: View? = null
+    internal var mPlayIcon: View? = null
 
     init {
         mProgressBar = itemView.findViewById(R.id.progress_bar)
         llVideoContaienr = itemView.findViewById(R.id.ll_container)
+        mPlayIcon = itemView.findViewById(R.id.play_icon)
     }
 
     override fun onBindViewHolder(itemList: ItemList) {
-//        setViewsVisibility(2, View.VISIBLE)
+        setViewsVisibility(0, View.VISIBLE)
         videoItemList = itemList as VideoItemList
         llVideoContaienr.setTag(itemList.id)
         llVideoContaienr.setBackgroundColor(ContextCompat.getColor(itemView.context, android.R.color.transparent))
@@ -87,9 +90,9 @@ class VideoPlayerViewHolder(itemView: View) : BaseViewHolder<ItemList>(itemView)
 
     fun setViewsVisibility(type: Int, visiblity: Int) {
         if (type == 0) {
-            mErrorView!!.visibility = visiblity
+            mPlayIcon!!.visibility = visiblity
         } else {
-            mErrorView!!.visibility = View.GONE
+            mPlayIcon!!.visibility = View.GONE
         }
         if (type == 1) {
             llVideoContaienr.visibility = visiblity
