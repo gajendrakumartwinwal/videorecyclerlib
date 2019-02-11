@@ -106,6 +106,7 @@ class PercentageCalculator {
      * Delayed notify handled here if DELAY_VALUE is greater than 0 else notify imidiately
      */
     private fun notifyActiveView(viewHolder: RecyclerView.ViewHolder?, position: Int) {
+        (viewHolder as NestedScrollListener).onPreActive()
         if (DELAY_VALUE > 0) {
             viewHolder!!.itemView.setTag(R.string.recycler_viewholder_key, "A-" + position)
             viewHolder.itemView.postDelayed({

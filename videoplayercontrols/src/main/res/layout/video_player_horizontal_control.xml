@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#ffffff">
+
+    <LinearLayout
+        android:id="@+id/top_control_land"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="top"
+        android:background="@drawable/fade_black_to_transpent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="16dp"
+        android:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/crossButton_land"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:padding="15dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_back_arrow_white" />
+
+        <TextView
+            android:id="@+id/video_title_land"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:visibility="invisible"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageButton
+            android:id="@+id/share_land"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@android:color/transparent"
+            android:padding="3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_share"
+            tools:ignore="MissingPrefix" />
+
+        <ImageButton
+            android:id="@+id/settings_land"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="16dp"
+            android:background="@android:color/transparent"
+            android:padding="6dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_settings"
+            tools:ignore="MissingPrefix" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/centerControl_land"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/seekbar_height_half">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1.5"
+            android:background="@android:color/transparent" />
+
+        <ImageButton
+            android:id="@+id/prev1_land"
+            android:layout_width="25dp"
+            android:layout_height="31dp"
+            android:background="@android:color/transparent"
+            android:padding="3dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_action_play_previous"
+            tools:ignore="MissingPrefix" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent" />
+
+        <ImageButton
+            android:id="@+id/play_land"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_action_pause"
+            tools:ignore="MissingPrefix" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/next1_land"
+            android:layout_width="25dp"
+            android:layout_height="31dp"
+            android:background="@android:color/transparent"
+            android:padding="3dp"
+            android:src="@drawable/ic_action_play_next"
+            tools:ignore="MissingPrefix" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1.5"
+            android:background="@android:color/transparent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_control_land"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/seekbar_height_half"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/time_current_land"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="00:01"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            tools:ignore="RtlHardcoded" />
+
+        <SeekBar
+            android:id="@+id/mediacontroller_progress_land"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="7dp"
+            android:layout_weight="1"
+            android:max="1000"
+            android:progressDrawable="@drawable/player_seek_progress" />
+
+        <TextView
+            android:id="@+id/time_land"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:paddingTop="5dp"
+            android:text="02:00"
+            android:textColor="#ccffffff"
+            android:textSize="12sp" />
+
+        <ImageButton
+            android:id="@+id/fullscreen_land"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginRight="16dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_icon_fullscreen"
+            android:visibility="visible"
+            tools:ignore="RtlHardcoded" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible" />
+</FrameLayout>

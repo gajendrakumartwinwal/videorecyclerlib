@@ -42,5 +42,9 @@ class ScrollAwareRecyclerView : RecyclerView {
     }
 
 
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        removeOnScrollListener(scrollListener)
+    }
 
 }

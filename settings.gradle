@@ -1,1 +1,1 @@
-include ':app', ':scrollawarelib'
+include ':app', ':scrollawarelib', ':videoplayercontrols'

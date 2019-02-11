@@ -12,6 +12,10 @@ import com.scrollaware.lib.interfaces.NestedScrollListener
 
 class SimpleViewHolder(itemView: View) : BaseViewHolder<ItemList>(itemView),
     NestedScrollListener {
+    override fun onPreActive() {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
+
     override fun onActive() {
         Log.d("ACCCCC", "Active position - " + mHeadline.getTag())
         mGearIcon.setBackgroundColor(ContextCompat.getColor(itemView.context, R.color.colorAccent))

@@ -1,6 +1,8 @@
 package com.example.kotlin
 
 import android.os.Bundle
+import android.support.v4.app.FragmentActivity
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.example.kotlin.recyclerview.ItemList
@@ -8,10 +10,10 @@ import com.example.kotlin.recyclerview.MyRecyclerAdapter
 import com.example.kotlin.recyclerview.VideoItemList
 import com.example.kotlin.recyclerview.ViewTemplate
 import com.example.kotlin.utils.URLs
-import com.google.android.youtube.player.YouTubeBaseActivity
 import java.util.*
 
-class MainActivity : YouTubeBaseActivity() {
+class MainActivity : AppCompatActivity
+    () {
 
     private lateinit var mAdapter: MyRecyclerAdapter
     private lateinit var mRecyclerView: RecyclerView
@@ -21,10 +23,14 @@ class MainActivity : YouTubeBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+    }
+
+    override fun onResume() {
+        super.onResume()
         mRecyclerView = findViewById(R.id.recycler_view)
         setRecyclerAdapter()
     }
-
 
     private lateinit var items: ArrayList<ItemList>
 

@@ -6,7 +6,9 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/video_thumb"/>
+            android:scaleType="fitXY"
+            android:layout_margin="8dp"
+            android:src="#e2e2e2"/>
 
     <ProgressBar
             android:id="@+id/progress_bar"
@@ -21,9 +23,11 @@
             android:src="@drawable/play_button"
             android:layout_gravity="center"/>
 
-    <FrameLayout
-            android:id="@+id/ll_container"
+    <com.video.controls.video.videoad.TOIVideoPlayerView
+            android:id="@+id/toivideoplayerview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:orientation="vertical" />
 
 </FrameLayout>

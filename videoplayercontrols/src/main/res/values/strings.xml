@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">videoplayercontrols</string>
+    <string name="network_unavailable">No internet connection. Please try later.</string>
+    <string name="video_play_error">Video is not available at this moment.\nPlease try again after some time.</string>
+
+
+    <string name="video_resolution_dialog_title">Select Quality</string>
+</resources>
